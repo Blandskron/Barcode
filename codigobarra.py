@@ -2,17 +2,17 @@ import barcode
 from barcode.writer import ImageWriter
 
 def generate_barcode(number):
-    # Convierte el número en una cadena de texto
+    # Convert the number to a string
     number_str = str(number)
 
-    # Crea un objeto Code 128 con el número proporcionado
+    # Create a Code 128 barcode object with the given number
     code128 = barcode.Code128(number_str, writer=ImageWriter())
 
-    # Genera el código de barras y guarda la imagen en un archivo
+    # Generate the barcode and save the image to a file
     filename = f'barcode_{number_str}.png'
     code128.save(filename)
 
-    print(f"El código de barras {number_str} ha sido generado correctamente.")
+    print(f"The barcode {number_str} has been generated successfully.")
 
 start_number = 10820231000
 end_number = 10820231200
